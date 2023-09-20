@@ -21,3 +21,22 @@ best_manager_september = (df.iloc[df[df['status'] == 'Сентябрь 2021'].in
 
 print('\nВопрос 3')
 print('Менеджер, который привлек больше всего денежных средств в сентябре 2021 -', best_manager_september.loc[0, 'sale'])
+
+# Вопрос 4
+
+last_str = len(df)
+october = df.iloc[df[df['status'] == 'Октябрь 2021'].index[0]:last_str]
+
+new_count = october['new/current'].value_counts()['новая']
+current_count = october['new/current'].value_counts()['текущая']
+
+print('\nВопрос 4')
+
+if new_count > current_count:
+    print('В октябре 2021 преобладает тип сделок "новая"')
+elif current_count > new_count:
+    print('В октябре 2021 преобладает тип сделок "текущая"')
+else:
+    print('В октябре 2021 преобладает равное значение типа сделок "новая" и "текущая"')
+
+
