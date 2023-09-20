@@ -39,4 +39,14 @@ elif current_count > new_count:
 else:
     print('В октябре 2021 преобладает равное значение типа сделок "новая" и "текущая"')
 
+# Вопрос 5
+
+may = df.iloc[df[df['status'] == 'Май 2021'].index[0] + 2:
+               df[df['status'] == 'Июнь 2021'].index[0]]
+
+
+received_in_june = may.loc[(pd.to_datetime(may['receiving_date']) >= '2021-06-01') &
+                           (pd.to_datetime(may['receiving_date']) <= '2021-06-30')]
+print('\nВопрос 5')
+print('В июне 2021 было получено', received_in_june['document'].value_counts()['оригинал'], 'оригиналов договоров по майским сделкам')
 
