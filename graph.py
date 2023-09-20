@@ -31,14 +31,11 @@ sum_october = october[october['status'] == 'ОПЛАЧЕНО']['sum'].sum().roun
 
 months = ['Май 2021', 'Июнь 2021', 'Июль 2021', 'Август 2021', 'Сентябрь 2021', 'Октябрь 2021']
 revenues = [sum_may, sum_june, sum_july, sum_august, sum_september, sum_october]
-fig, ax = plt.subplots()
 
-ax.set_title('Изменение выручки компании')
-
-plt.bar(months, revenues, alpha=0.6, bottom=2, edgecolor="k", linewidth=2)
-ax.set_xlabel('', fontsize=5, labelpad=5)
-ax.set_ylabel('Выручка, руб.', fontsize=5, labelpad=5)
-plt.subplots_adjust(left=None, bottom=0.2, right=None, top=0.85, wspace=None, hspace=None)
+plt.figure(figsize=(10,5))
+plt.bar(months, revenues)
+plt.title('Изменение выручки компании')
+plt.ylabel('Выручка, руб.')
 
 plt.show()
 
