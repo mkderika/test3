@@ -1,6 +1,6 @@
 import pandas as pd
 
-file = 'data.xlsx'
+file = 'data2.xlsx'
 df = pd.read_excel(file, sheet_name='Лист1')
 
 # Вопрос 1
